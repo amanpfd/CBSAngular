@@ -1,0 +1,18 @@
+<p>
+  {{booking.tripStatus}}
+</p>
+<div [hidden]="!(booking.tripStatus==completed)">
+  <form (ngSubmit)="setRating()">
+    <select [(ngModel)]=rating name="rating" required>
+      <option *ngFor="let a of counter(1,6)" [value]="a">{{a}}</option>
+    </select><br><br>
+    <button type="submit" class="btn btn-success">Rate</button>
+  </form>
+</div>
+<div [hidden]="!(booking.tripStatus==rated)">
+  <form (ngSubmit)="payment()">
+    Final Fare = Rs. {{booking.finalFare}}
+    <br><br>
+    <button type="submit" class="btn btn-success">Payment</button>
+  </form>
+</div>
