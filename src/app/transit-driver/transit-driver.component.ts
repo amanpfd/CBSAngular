@@ -47,7 +47,7 @@ export class TransitDriverComponent implements OnInit {
   }
 
   endTrip(){
-    this.booking.finalTime=20;
+    this.booking.finalTime=this.i;
     this.completed = true;
     this.transitService.endTrip(this.booking).subscribe(book => this.booking = book, err => this.err = err);
     this.transitService.getDriver(this.booking.driverId).subscribe(driver => this.driver = driver, err => this.err = err);

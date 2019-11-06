@@ -6,7 +6,8 @@
   </form>
 </div>
 <div [hidden]="!started || completed">
-  {{i}}
+    <h3>Timer</h3>
+  <h2>{{i}}</h2>
   <form (ngSubmit)="endTrip()">
     <div class="form group">
       <button type="submit" class="btn btn-success">End Trip</button>
@@ -14,6 +15,7 @@
   </form>
 </div>
 <div [hidden]="!completed">
-  {{i}}
-  Trip Completed
+    <h3>Timer</h3>
+    <h2>{{i}}</h2> 
+  <h1>Trip Completed</h1>
 </div>
